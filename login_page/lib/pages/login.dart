@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_page/components/inputfeild.dart';
 import 'package:login_page/components/signinbutton.dart';
+import 'package:login_page/components/square_tile.dart';
 
 class Login extends StatelessWidget {
   Login({super.key});
@@ -17,7 +18,7 @@ class Login extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 50),
+                const SizedBox(height: 30),
                 const Icon(
                   Icons.lock,
                   size: 100,
@@ -61,6 +62,65 @@ class Login extends StatelessWidget {
                 const SizedBox(height: 30),
                 const SigninButton(),
                 const SizedBox(height: 50),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Divider(
+                          thickness: 0.5,
+                          color: Colors.grey[400],
+                        ),
+                      ),
+                      Text(
+                        "Or continue with",
+                        style: TextStyle(
+                          color: Colors.grey[700],
+                        ),
+                      ),
+                      Expanded(
+                        child: Divider(
+                          thickness: 0.5,
+                          color: Colors.grey[400],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 50),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    LoginWithTile(iconpath: 'lib/images/google.png'),
+                    SizedBox(width: 25),
+                    LoginWithTile(iconpath: 'lib/images/apple.png'),
+                  ],
+                ),
+                const SizedBox(height: 30),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Not a member?",
+                      style: TextStyle(
+                        color: Colors.grey[700],
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 4,
+                    ),
+                    const Text(
+                      "Register now",
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
               ],
             ),
           ),
